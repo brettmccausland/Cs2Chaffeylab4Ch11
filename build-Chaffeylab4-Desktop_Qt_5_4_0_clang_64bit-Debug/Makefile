@@ -157,6 +157,7 @@ DIST          = ../../../Qt/5.4/clang_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.4/clang_64/mkspecs/features/qt_config.prf \
 		../../../Qt/5.4/clang_64/mkspecs/macx-clang/qmake.conf \
 		../../../Qt/5.4/clang_64/mkspecs/features/spec_post.prf \
+		../Chaffeylab4/.qmake.stash \
 		../../../Qt/5.4/clang_64/mkspecs/features/exclusive_builds.prf \
 		../../../Qt/5.4/clang_64/mkspecs/features/default_pre.prf \
 		../../../Qt/5.4/clang_64/mkspecs/features/mac/default_pre.prf \
@@ -172,7 +173,8 @@ DIST          = ../../../Qt/5.4/clang_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.4/clang_64/mkspecs/features/exceptions.prf \
 		../../../Qt/5.4/clang_64/mkspecs/features/yacc.prf \
 		../../../Qt/5.4/clang_64/mkspecs/features/lex.prf \
-		../Chaffeylab4/Chaffeylab4.pro  ../Chaffeylab4/main.cpp
+		../Chaffeylab4/Chaffeylab4.pro ccc_empl.h \
+		staff.h ../Chaffeylab4/main.cpp
 QMAKE_TARGET  = Chaffeylab4
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = Chaffeylab4
@@ -320,6 +322,7 @@ Makefile: ../Chaffeylab4/Chaffeylab4.pro ../../../Qt/5.4/clang_64/mkspecs/macx-c
 		../../../Qt/5.4/clang_64/mkspecs/features/qt_config.prf \
 		../../../Qt/5.4/clang_64/mkspecs/macx-clang/qmake.conf \
 		../../../Qt/5.4/clang_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../../Qt/5.4/clang_64/mkspecs/features/exclusive_builds.prf \
 		../../../Qt/5.4/clang_64/mkspecs/features/default_pre.prf \
 		../../../Qt/5.4/clang_64/mkspecs/features/mac/default_pre.prf \
@@ -444,6 +447,7 @@ Makefile: ../Chaffeylab4/Chaffeylab4.pro ../../../Qt/5.4/clang_64/mkspecs/macx-c
 ../../../Qt/5.4/clang_64/mkspecs/features/qt_config.prf:
 ../../../Qt/5.4/clang_64/mkspecs/macx-clang/qmake.conf:
 ../../../Qt/5.4/clang_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../../Qt/5.4/clang_64/mkspecs/features/exclusive_builds.prf:
 ../../../Qt/5.4/clang_64/mkspecs/features/default_pre.prf:
 ../../../Qt/5.4/clang_64/mkspecs/features/mac/default_pre.prf:
@@ -504,7 +508,7 @@ compiler_clean:
 
 ####### Compile
 
-main.o: ../Chaffeylab4/main.cpp 
+main.o: ../Chaffeylab4/main.cpp ../Chaffeylab4/ccc_empl.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../Chaffeylab4/main.cpp
 
 ####### Install

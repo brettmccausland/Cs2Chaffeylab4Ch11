@@ -8,3 +8,7 @@ SOURCES += main.cpp
 include(deployment.pri)
 qtcAddDeployment()
 
+HEADERS += \
+    ccc_empl.h \
+    staff.h
+

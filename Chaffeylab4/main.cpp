@@ -1,9 +1,9 @@
 #include <iostream>
 #include <vector>
 #include "ccc_empl.h"
-
+#include"staff.h"
 using namespace std;
-void Exercise11_2();//brett(in progress)
+void Exercise11_2();//brett(done)
 void Exercise11_4();//rex
 void Exercise11_8();//elizabeth
 void Exercise11_9();// andre
@@ -14,15 +14,21 @@ void merge_sort(vector<int>& a, int from, int to);
 void swap(int& x, int& y);
 void print(vector<int> a);
 void rand_seed();
+
 int min_position(vector<int>& a, int from, int to);
+
+
 void selection_sort(vector<int>& a);
+
+
 int rand_int(int a, int b);
 int binary_search(vector<int> v, int from, int to, int value);
 bool operator<(const Employee& a, const Employee& b);
 int main()
 {
+  cout<<"Lab 4"<<endl;
   system("clear");
-  //Exercise11_2();
+  Exercise11_2();
   //Exercise11_4();
   //Exercise11_8();
   //Exercise11_9();
@@ -31,20 +37,19 @@ int main()
 
   return 0;
 }
-void Exercise11_2()
+void Exercise11_2()//done
 {
   //Modify the selection sort algorithm to sort a vector of employees by salary.
-    vector<Employee> staff(5);
+     vector<Employee> staff(5);
+     Employee temp;
      staff[0] = Employee("Cracker, Carl", 48000.0);
      staff[1] = Employee("Hacker, Harry", 35000.0);
      staff[2] = Employee("Lam, Larry", 78000.0);
      staff[3] = Employee("Reindeer, Rudolf", 63000.0);
      staff[4] = Employee("Sandman, Susan", 51500.0);
-
-     sort(staff.begin(), staff.end());
-
-     for (int i = 0; i < staff.size(); i++)
-        cout << staff[i].get_name() << " " << staff[i].get_salary() << "\n";
+     Staff mystaff(staff);
+     mystaff.selection_sort();
+     mystaff.print();
 }
 void Exercise11_4()
 {
@@ -172,6 +177,7 @@ int min_position(vector<int>& a, int from, int to)
       if (a[i] < a[min_pos]) min_pos = i;
    return min_pos;
 }
+
 void selection_sort(vector<int>& a)
 {
    int next; // The next position to be set to the minimum
