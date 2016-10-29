@@ -12,6 +12,7 @@ public:
     Staff(vector<Employee>a);
     void print();
     void selection_sort();
+
     ~Staff();
 private:
     int min_position(vector<Employee>& a, int from, int to);

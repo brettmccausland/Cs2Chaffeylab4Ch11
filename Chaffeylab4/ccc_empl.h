@@ -11,7 +11,7 @@ class Employee
 public:
 
    Employee();
-
+   ~Employee();
    Employee(string employee_name, double initial_salary);
    void set_salary(double new_salary);
    void set_name(string new_name);
@@ -28,10 +28,14 @@ void Employee::operator =(const Employee r)
     this->set_salary(r.get_salary());
     this->set_name(r.get_name());
 }
+Employee::~Employee()
+{
 
+}
 Employee::Employee()
 {
    salary = 0;
+   name= " ";
 }
 void Employee::printinfo()const
 {
