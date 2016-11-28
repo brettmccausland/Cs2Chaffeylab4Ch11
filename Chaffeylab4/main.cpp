@@ -57,7 +57,7 @@ void Exercise11_4()
     staff[2] = Employee("Lam, Larry", 78000.0);
     staff[3] = Employee("Reindeer, Rudolf", 63000.0);
     staff[4] = Employee("Sandman, Susan", 51500.0);
-    merge_sort(staff, 0, staff.size());
+    merge_sort(staff, 0, staff.size() - 1); //Change staff.size() to staff.size() - 1
     cout<<"done"<<endl;
     Staff mystaff(staff);
     mystaff.print();
@@ -159,7 +159,7 @@ void merge(vector<Employee>& a, int from, int mid, int to)
 
    while (i1 <= mid && i2 <= to)
    {
-      if (a[i1]< a[i2])
+      if (a[i1].get_salary() < a[i2].get_salary()) // added .get_salary() to read salary for comparison
       {
           cout<<"if"<<endl;
          b[j] = a[i1];
